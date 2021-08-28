@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { Button } from "react-bootstrap";
+import { useState, useEffect } from "react";
+import "./App.css";
+import GpaCalculator from "./components/GpaCalculator";
+import SelectNoOfSemesters from "./components/SelectNoOfSemesters";
 
 function App() {
+  const [noOfSemesters, setNoOfSemesters] = useState(0);
+  const [gpa, setGpa] = useState([]);
+
+  useEffect(() => {
+    var tempArr = [];
+    for (let i = 0; i < noOfSemesters; i++) {
+      tempArr.push(0.0);
+    }
+    setGpa(tempArr);
+  }, [noOfSemesters]);
+
+  console.log(gpa);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1 className="heading">GPA Calculator</h1>
+      <div className="body">
+        {noOfSemesters === 0 ? (
+          <SelectNoOfSemesters
+            setNoOfSemesters={setNoOfSemesters}
+            noOfSemesters={noOfSemesters}
+          />
+        ) : (
+          <GpaCalculator noOfSemesters={noOfSemesters} gpaArray={gpa} />
+        )}
+      </div>
     </div>
   );
 }
