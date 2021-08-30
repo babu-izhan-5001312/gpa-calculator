@@ -3,10 +3,13 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import GpaCalculator from "./components/GpaCalculator";
 import SelectNoOfSemesters from "./components/SelectNoOfSemesters";
+import GpaDataTable from "./components/GpaDataTable";
 
 function App() {
   const [noOfSemesters, setNoOfSemesters] = useState(0);
   const [gpa, setGpa] = useState([]);
+  const [gpaData, setGpaData] = useState({});
+  const [calculate, setCalculate] = useState(false);
 
   useEffect(() => {
     var tempArr = [];
@@ -16,7 +19,7 @@ function App() {
     setGpa(tempArr);
   }, [noOfSemesters]);
 
-  console.log(gpa);
+  console.log(gpaData);
   return (
     <div className="container">
       <h1 className="heading">GPA Calculator</h1>
@@ -27,7 +30,31 @@ function App() {
             noOfSemesters={noOfSemesters}
           />
         ) : (
-          <GpaCalculator noOfSemesters={noOfSemesters} gpaArray={gpa} />
+          <div>
+            {gpa.map((gp, i) => {
+              return (
+                <GpaCalculator
+                  key={i}
+                  semno={i + 1}
+                  setGpaData={setGpaData}
+                  gpaData={gpaData}
+                  calculate={calculate}
+                />
+              );
+            })}
+            <Button
+              onClick={() => {
+                setCalculate(!calculate);
+              }}
+            >
+              Calculate
+            </Button>
+          </div>
+        )}
+        {gpaData === {} ? (
+          <div></div>
+        ) : (
+          <GpaDataTable gpaData={gpaData} noOfSemesters={noOfSemesters} />
         )}
       </div>
     </div>

@@ -1,38 +1,71 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { Button } from "react-bootstrap";
 
-function GpaCalculator({ noOfSemesters, gpaArray }) {
+function GpaCalculator({ semno, setGpaData, gpaData, calculate }) {
   const [subjects, setSubjects] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-  const [credits, setcredits] = useState([]);
-  const [points, setpoints] = useState([]);
-  const [semNo, setSemNo] = useState(1);
+  const [credits, setCredits] = useState({});
+  const [points, setPoints] = useState({});
 
-  const insertGpa = () => {};
+  const calculateGpa = () => {
+    let tempArray = [];
+    subjects.forEach((subno) => {
+      tempArray.push(credits[subno] * points[subno]);
+    });
+    const numerator = tempArray.reduce((a, b) => a + b);
+    const denominator = Object.values(credits).reduce(
+      (a, b) => parseInt(a) + parseInt(b)
+    );
+    console.log(numerator, denominator);
+    const gpa = numerator / denominator;
+    console.log(gpa);
+    setGpaData({ ...gpaData, [semno]: gpa });
+  };
 
-  const goToData = () => {};
+  useEffect(() => {
+    calculateGpa();
+  }, [calculate]);
+
+  const insertValues = (value, place, type) => {
+    switch (type) {
+      case "point":
+        setPoints({ ...points, [place]: parseInt(value) });
+        break;
+      case "credit":
+        setCredits({ ...credits, [place]: parseInt(value) });
+        break;
+      default:
+    }
+  };
+
+  console.log(credits);
+  console.log(points);
 
   return (
     <div className="container">
-      <div className="sem">Semester: {semNo}</div>
-      <div className="number-of-subjects">No.of Subjects:{subjects.length}</div>
-      <Button
-        variant="primary"
-        onClick={() => {
-          setSubjects([...subjects, subjects[-1] + 1]);
-        }}
-      >
-        Add a subject
-      </Button>
-      <Button
-        variant="danger"
-        onClick={() => {
-          let arr = [...subjects];
-          arr.pop();
-          setSubjects(arr);
-        }}
-      >
-        Remove a subject
-      </Button>
+      <div className="sem">Semester: {semno}</div>
+      <div className="number-of-subjects">
+        No.of Subjects:{subjects.length}
+        <Button
+          variant="primary"
+          onClick={() => {
+            setSubjects([...subjects, subjects[-1] + 1]);
+          }}
+        >
+          Add a subject
+        </Button>
+        <Button
+          variant="danger"
+          onClick={() => {
+            let arr = [...subjects];
+            arr.pop();
+            setSubjects(arr);
+          }}
+        >
+          Remove a subject
+        </Button>
+      </div>
+
       <div className="subjects-input">
         <div className="Heading">Grade Points | Credits</div>
         {subjects.map((n, i) => {
@@ -43,7 +76,7 @@ function GpaCalculator({ noOfSemesters, gpaArray }) {
                 name="marks"
                 id="marks"
                 onChange={(e) => {
-                  console.log(e.target.value, i, "point");
+                  insertValues(e.target.value, n, "point");
                 }}
               />
               <input
@@ -51,25 +84,19 @@ function GpaCalculator({ noOfSemesters, gpaArray }) {
                 name="credit"
                 id="credit"
                 onChange={(e) => {
-                  console.log(e.target.value, i, "credit");
+                  if (e.target.value > 4) {
+                    console.log(
+                      "This is the incorrect value, credit must be 4 or lower"
+                    );
+                  } else {
+                    insertValues(e.target.value, n, "credit");
+                  }
                 }}
               />
             </div>
           );
         })}
       </div>
-      <Button
-        onClick={() => {
-          if (semNo < noOfSemesters) {
-            setSemNo(semNo + 1);
-            insertGpa();
-          } else {
-            goToData();
-          }
-        }}
-      >
-        Calculate
-      </Button>
     </div>
   );
 }
