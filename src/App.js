@@ -9,7 +9,7 @@ function App() {
   const [noOfSemesters, setNoOfSemesters] = useState(0);
   const [gpa, setGpa] = useState([]);
   const [gpaData, setGpaData] = useState({});
-  const [calculate, setCalculate] = useState(false);
+  const [ShowGpaData, setShowGpaData] = useState(false);
 
   useEffect(() => {
     var tempArr = [];
@@ -31,31 +31,22 @@ function App() {
           />
         ) : (
           <div>
-            {gpa.map((gp, i) => {
-              return (
-                <GpaCalculator
-                  key={i}
-                  semno={i + 1}
-                  setGpaData={setGpaData}
-                  gpaData={gpaData}
-                  calculate={calculate}
-                />
-              );
-            })}
-            <Button
-              onClick={() => {
-                setCalculate(!calculate);
-              }}
-            >
-              Calculate
-            </Button>
+            <div className="row row-cols-12 row-cols-lg-3">
+              {gpa.map((gp, i) => {
+                return (
+                  <GpaCalculator
+                    key={i}
+                    semno={i + 1}
+                    setGpaData={setGpaData}
+                    gpaData={gpaData}
+                    setShowGpaData={setShowGpaData}
+                  />
+                );
+              })}
+            </div>
           </div>
         )}
-        {gpaData === {} ? (
-          <div></div>
-        ) : (
-          <GpaDataTable gpaData={gpaData} noOfSemesters={noOfSemesters} />
-        )}
+        {ShowGpaData ? <GpaDataTable gpaData={gpaData} /> : <div></div>}
       </div>
     </div>
   );
