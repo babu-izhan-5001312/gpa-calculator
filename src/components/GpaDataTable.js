@@ -1,13 +1,19 @@
 import { useState } from "react";
 import { useEffect } from "react";
 
-const GpaDataTable = ({ gpaData }) => {
+const GpaDataTable = ({ gpaData, noOfSemesters }) => {
   const [Cgpa, setCgpa] = useState(0);
   useEffect(() => {
-    const total = Object.values(gpaData).reduce((a, b) => a + b, 0);
-    setCgpa(total);
-    console.log(total);
-  }, []);
+    if (noOfSemesters === 1) {
+      setCgpa(gpaData[1]);
+    }
+    if (noOfSemesters > 1) {
+      const total = Object.values(gpaData).reduce((a, b) => a + b, 0);
+      setCgpa(total);
+      console.log(total);
+    }
+  }, [gpaData]);
+
   return (
     <div>
       {Object.keys(gpaData).map(([key, value]) => {

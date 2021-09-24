@@ -1,5 +1,4 @@
-import { Button } from "react-bootstrap";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./App.css";
 import GpaCalculator from "./components/GpaCalculator";
 import SelectNoOfSemesters from "./components/SelectNoOfSemesters";
@@ -7,17 +6,8 @@ import GpaDataTable from "./components/GpaDataTable";
 
 function App() {
   const [noOfSemesters, setNoOfSemesters] = useState(0);
-  const [gpa, setGpa] = useState([]);
   const [gpaData, setGpaData] = useState({});
   const [ShowGpaData, setShowGpaData] = useState(false);
-
-  useEffect(() => {
-    var tempArr = [];
-    for (let i = 0; i < noOfSemesters; i++) {
-      tempArr.push(0.0);
-    }
-    setGpa(tempArr);
-  }, [noOfSemesters]);
 
   console.log(gpaData);
   return (
@@ -32,21 +22,93 @@ function App() {
         ) : (
           <div>
             <div className="row row-cols-12 row-cols-lg-3">
-              {gpa.map((gp, i) => {
-                return (
-                  <GpaCalculator
-                    key={i}
-                    semno={i + 1}
-                    setGpaData={setGpaData}
-                    gpaData={gpaData}
-                    setShowGpaData={setShowGpaData}
-                  />
-                );
-              })}
+              {noOfSemesters >= 1 ? (
+                <GpaCalculator
+                  key={1}
+                  semno={1}
+                  setGpaData={setGpaData}
+                  gpaData={gpaData}
+                  setShowGpaData={setShowGpaData}
+                />
+              ) : null}
+
+              {noOfSemesters >= 2 ? (
+                <GpaCalculator
+                  key={2}
+                  semno={2}
+                  setGpaData={setGpaData}
+                  gpaData={gpaData}
+                  setShowGpaData={setShowGpaData}
+                />
+              ) : null}
+
+              {noOfSemesters >= 3 ? (
+                <GpaCalculator
+                  key={3}
+                  semno={3}
+                  setGpaData={setGpaData}
+                  gpaData={gpaData}
+                  setShowGpaData={setShowGpaData}
+                />
+              ) : null}
+
+              {noOfSemesters >= 4 ? (
+                <GpaCalculator
+                  key={4}
+                  semno={4}
+                  setGpaData={setGpaData}
+                  gpaData={gpaData}
+                  setShowGpaData={setShowGpaData}
+                />
+              ) : null}
+
+              {noOfSemesters >= 5 ? (
+                <GpaCalculator
+                  key={5}
+                  semno={5}
+                  setGpaData={setGpaData}
+                  gpaData={gpaData}
+                  setShowGpaData={setShowGpaData}
+                />
+              ) : null}
+
+              {noOfSemesters >= 6 ? (
+                <GpaCalculator
+                  key={6}
+                  semno={6}
+                  setGpaData={setGpaData}
+                  gpaData={gpaData}
+                  setShowGpaData={setShowGpaData}
+                />
+              ) : null}
+
+              {noOfSemesters >= 7 ? (
+                <GpaCalculator
+                  key={7}
+                  semno={7}
+                  setGpaData={setGpaData}
+                  gpaData={gpaData}
+                  setShowGpaData={setShowGpaData}
+                />
+              ) : null}
+
+              {noOfSemesters >= 8 ? (
+                <GpaCalculator
+                  key={8}
+                  semno={8}
+                  setGpaData={setGpaData}
+                  gpaData={gpaData}
+                  setShowGpaData={setShowGpaData}
+                />
+              ) : null}
             </div>
           </div>
         )}
-        {ShowGpaData ? <GpaDataTable gpaData={gpaData} /> : <div></div>}
+        {ShowGpaData ? (
+          <GpaDataTable gpaData={gpaData} noOfSemesters={noOfSemesters} />
+        ) : (
+          <div></div>
+        )}
       </div>
     </div>
   );

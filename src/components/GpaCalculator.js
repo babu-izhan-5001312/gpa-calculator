@@ -8,8 +8,8 @@ function GpaCalculator({ semno, setGpaData, gpaData, setShowGpaData }) {
 
   const calculateGpa = () => {
     let tempArray = [];
-    subjects.forEach((subno) => {
-      tempArray.push(credits[subno] * points[subno]);
+    subjects.forEach((subno, i) => {
+      tempArray.push(credits[i + 1] * points[i + 1]);
     });
     const numerator = tempArray.reduce((a, b) => a + b);
     const denominator = Object.values(credits).reduce(
@@ -29,6 +29,12 @@ function GpaCalculator({ semno, setGpaData, gpaData, setShowGpaData }) {
         break;
       default:
     }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    calculateGpa();
+    setShowGpaData(true);
   };
 
   return (
@@ -60,50 +66,48 @@ function GpaCalculator({ semno, setGpaData, gpaData, setShowGpaData }) {
 
       <div className="subjects-input row-cols-12 row">
         <div className="Heading">Grade Points | Credits</div>
-        <div className="d-flex align-items-center justify-content-center flex-column points-credits-inputs">
-          {subjects.map((n, i) => {
-            return (
-              <div className="one-subject row row-cols-4" key={i}>
-                <span>{`${n}.`}</span>
-                <input
-                  type="number"
-                  name="marks"
-                  id="marks"
-                  className="number-input"
-                  onChange={(e) => {
-                    insertValues(e.target.value, n, "point");
-                  }}
-                />
-                <input
-                  type="number"
-                  name="credit"
-                  id="credit"
-                  className="number-input"
-                  onChange={(e) => {
-                    if (e.target.value > 4) {
-                      console.log(
-                        "This is the incorrect value, credit must be 4 or lower"
-                      );
-                    } else {
-                      insertValues(e.target.value, n, "credit");
-                    }
-                  }}
-                />
-              </div>
-            );
-          })}
-        </div>
-        <div className="d-flex align-items-center justify-content-center">
-          <Button
-            onClick={() => {
-              calculateGpa();
-              setShowGpaData(true);
-            }}
-            className="calculate-button"
-          >
-            Calculate
-          </Button>
-        </div>
+        <form onSubmit={handleSubmit}>
+          <div className="d-flex align-items-center justify-content-center flex-column points-credits-inputs">
+            {subjects.map((n, i) => {
+              return (
+                <div className="one-subject row row-cols-4" key={i}>
+                  <span>{`${i + 1}.`}</span>
+                  <input
+                    type="number"
+                    name="marks"
+                    id="marks"
+                    className="number-input"
+                    onChange={(e) => {
+                      insertValues(e.target.value, i + 1, "point");
+                    }}
+                    required
+                  />
+                  <input
+                    type="number"
+                    name="credit"
+                    id="credit"
+                    className="number-input"
+                    onChange={(e) => {
+                      if (e.target.value > 4) {
+                        console.log(
+                          "This is the incorrect value, credit must be 4 or lower"
+                        );
+                      } else {
+                        insertValues(e.target.value, i + 1, "credit");
+                      }
+                    }}
+                    required
+                  />
+                </div>
+              );
+            })}
+          </div>
+          <div className="d-flex align-items-center justify-content-center">
+            <Button className="calculate-button" type="submit">
+              Calculate
+            </Button>
+          </div>
+        </form>
       </div>
     </div>
   );
