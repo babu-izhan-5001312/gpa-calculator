@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button } from "react-bootstrap";
 import "./App.css";
 import GpaCalculator from "./components/GpaCalculator";
 import SelectNoOfSemesters from "./components/SelectNoOfSemesters";
@@ -9,7 +10,6 @@ function App() {
   const [gpaData, setGpaData] = useState({});
   const [ShowGpaData, setShowGpaData] = useState(false);
 
-  console.log(gpaData);
   return (
     <div className="container">
       <h1 className="heading">GPA Calculator</h1>
@@ -21,6 +21,17 @@ function App() {
           />
         ) : (
           <div>
+            <div>
+              <Button
+                variant="danger"
+                onClick={() => {
+                  setNoOfSemesters(0);
+                  setShowGpaData(false);
+                }}
+              >
+                Go Back
+              </Button>
+            </div>
             <div className="row row-cols-12 row-cols-lg-3">
               {noOfSemesters >= 1 ? (
                 <GpaCalculator

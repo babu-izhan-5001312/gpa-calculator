@@ -16,7 +16,14 @@ function GpaCalculator({ semno, setGpaData, gpaData, setShowGpaData }) {
       (a, b) => parseInt(a) + parseInt(b)
     );
     const gpa = numerator / denominator;
-    setGpaData({ ...gpaData, [semno]: gpa });
+    setGpaData({
+      ...gpaData,
+      [semno]: {
+        gpa,
+        numerator,
+        denominator,
+      },
+    });
   };
 
   const insertValues = (value, place, type) => {
