@@ -39,7 +39,7 @@ function App() {
               </Button>
             </div>
             <div className="container">
-              <div className="row row-cols-12 row-cols-lg-3">
+              <div className="row row-cols-12 row-cols-lg-2">
                 {noOfSemesters >= 1 ? (
                   <GpaCalculator
                     key={1}
