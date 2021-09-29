@@ -39,104 +39,117 @@ function App() {
               </Button>
             </div>
             <div className="container">
-              <div className="row row-cols-12 row-cols-lg-2">
-                {noOfSemesters >= 1 ? (
-                  <GpaCalculator
-                    key={1}
-                    semno={1}
-                    setGpaData={setGpaData}
-                    gpaData={gpaData}
-                    setShowGpaData={setShowGpaData}
-                  />
-                ) : null}
-
-                {noOfSemesters >= 2 ? (
-                  <GpaCalculator
-                    key={2}
-                    semno={2}
-                    setGpaData={setGpaData}
-                    gpaData={gpaData}
-                    setShowGpaData={setShowGpaData}
-                  />
-                ) : null}
-
-                {noOfSemesters >= 3 ? (
-                  <GpaCalculator
-                    key={3}
-                    semno={3}
-                    setGpaData={setGpaData}
-                    gpaData={gpaData}
-                    setShowGpaData={setShowGpaData}
-                  />
-                ) : null}
-
-                {noOfSemesters >= 4 ? (
-                  <GpaCalculator
-                    key={4}
-                    semno={4}
-                    setGpaData={setGpaData}
-                    gpaData={gpaData}
-                    setShowGpaData={setShowGpaData}
-                  />
-                ) : null}
-
-                {noOfSemesters >= 5 ? (
-                  <GpaCalculator
-                    key={5}
-                    semno={5}
-                    setGpaData={setGpaData}
-                    gpaData={gpaData}
-                    setShowGpaData={setShowGpaData}
-                  />
-                ) : null}
-
-                {noOfSemesters >= 6 ? (
-                  <GpaCalculator
-                    key={6}
-                    semno={6}
-                    setGpaData={setGpaData}
-                    gpaData={gpaData}
-                    setShowGpaData={setShowGpaData}
-                  />
-                ) : null}
-
-                {noOfSemesters >= 7 ? (
-                  <GpaCalculator
-                    key={7}
-                    semno={7}
-                    setGpaData={setGpaData}
-                    gpaData={gpaData}
-                    setShowGpaData={setShowGpaData}
-                  />
-                ) : null}
-
-                {noOfSemesters >= 8 ? (
-                  <GpaCalculator
-                    key={8}
-                    semno={8}
-                    setGpaData={setGpaData}
-                    gpaData={gpaData}
-                    setShowGpaData={setShowGpaData}
-                  />
-                ) : null}
-                {noOfSemesters >= 9 ? (
-                  <GpaCalculator
-                    key={9}
-                    semno={9}
-                    setGpaData={setGpaData}
-                    gpaData={gpaData}
-                    setShowGpaData={setShowGpaData}
-                  />
-                ) : null}
-                {noOfSemesters >= 10 ? (
-                  <GpaCalculator
-                    key={10}
-                    semno={10}
-                    setGpaData={setGpaData}
-                    gpaData={gpaData}
-                    setShowGpaData={setShowGpaData}
-                  />
-                ) : null}
+              <div className="row">
+                <div className="col-12 col-lg-6">
+                  {noOfSemesters >= 1 ? (
+                    <GpaCalculator
+                      key={1}
+                      semno={1}
+                      setGpaData={setGpaData}
+                      gpaData={gpaData}
+                      setShowGpaData={setShowGpaData}
+                    />
+                  ) : null}
+                </div>
+                <div className="col-12 col-lg-6">
+                  {noOfSemesters >= 2 ? (
+                    <GpaCalculator
+                      key={2}
+                      semno={2}
+                      setGpaData={setGpaData}
+                      gpaData={gpaData}
+                      setShowGpaData={setShowGpaData}
+                    />
+                  ) : null}
+                </div>
+                <div className="col-12 col-lg-6">
+                  {noOfSemesters >= 3 ? (
+                    <GpaCalculator
+                      key={3}
+                      semno={3}
+                      setGpaData={setGpaData}
+                      gpaData={gpaData}
+                      setShowGpaData={setShowGpaData}
+                    />
+                  ) : null}
+                </div>
+                <div className="col-12 col-lg-6">
+                  {noOfSemesters >= 4 ? (
+                    <GpaCalculator
+                      key={4}
+                      semno={4}
+                      setGpaData={setGpaData}
+                      gpaData={gpaData}
+                      setShowGpaData={setShowGpaData}
+                    />
+                  ) : null}
+                </div>
+                <div className="col-12 col-lg-6">
+                  {noOfSemesters >= 5 ? (
+                    <GpaCalculator
+                      key={5}
+                      semno={5}
+                      setGpaData={setGpaData}
+                      gpaData={gpaData}
+                      setShowGpaData={setShowGpaData}
+                    />
+                  ) : null}
+                </div>
+                <div className="col-12 col-lg-6">
+                  {noOfSemesters >= 6 ? (
+                    <GpaCalculator
+                      key={6}
+                      semno={6}
+                      setGpaData={setGpaData}
+                      gpaData={gpaData}
+                      setShowGpaData={setShowGpaData}
+                    />
+                  ) : null}
+                </div>
+                <div className="col-12 col-lg-6">
+                  {noOfSemesters >= 7 ? (
+                    <GpaCalculator
+                      key={7}
+                      semno={7}
+                      setGpaData={setGpaData}
+                      gpaData={gpaData}
+                      setShowGpaData={setShowGpaData}
+                    />
+                  ) : null}
+                </div>
+                <div className="col-12 col-lg-6">
+                  {noOfSemesters >= 8 ? (
+                    <GpaCalculator
+                      key={8}
+                      semno={8}
+                      setGpaData={setGpaData}
+                      gpaData={gpaData}
+                      setShowGpaData={setShowGpaData}
+                    />
+                  ) : null}
+                </div>
+                <div className="col-12 col-lg-6">
+                  {noOfSemesters >= 9 ? (
+                    <GpaCalculator
+                      key={9}
+                      semno={9}
+                      setGpaData={setGpaData}
+                      gpaData={gpaData}
+                      setShowGpaData={setShowGpaData}
+                    />
+                  ) : null}
+                </div>
+                <div className="col-12 col-lg-6">
+                  {noOfSemesters >= 10 ? (
+                    <GpaCalculator
+                      key={10}
+                      semno={10}
+                      setGpaData={setGpaData}
+                      gpaData={gpaData}
+                      setShowGpaData={setShowGpaData}
+                    />
+                  ) : null}
+                </div>
               </div>
             </div>
           </div>
