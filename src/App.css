@@ -16,6 +16,20 @@ input[type="number"]::-webkit-outer-spin-button {
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  max-width: 100px;
+}
+
+.gpa-calculator {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 5px;
+  margin-top: 70px;
+  padding-top: 60px;
+  max-height: 40rem;
+  min-width: 25rem;
+}
+
+.calc-wrapper {
+  margin: 20px;
 }
 
 .heading {
@@ -42,4 +56,55 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .semester-button {
   margin: 0.5rem;
+  min-width: 160px;
+  min-height: 50px;
+}
+
+.semester {
+  margin-top: 70px;
+}
+
+.year {
+  margin: 10px;
+}
+
+.sem-header {
+  margin-bottom: 50px;
+}
+
+.go-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px;
+}
+
+.calculate-button-wrapper {
+  margin-top: 50px;
+}
+
+.table-heading {
+  text-align: center;
+}
+
+.table-heading-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gpa-data-wrapper {
+  margin: 100px;
+}
+
+.gpa-data-table {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.gpa {
+  padding: 20px;
 }

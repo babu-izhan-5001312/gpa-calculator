@@ -20,17 +20,21 @@ const GpaDataTable = ({ gpaData, noOfSemesters }) => {
   }, [gpaData]);
 
   return (
-    <div>
-      {Object.keys(gpaData).map(([key, value]) => {
-        return (
-          <div key={key}>
-            <h1>
-              Semester {key}: {gpaData[key].gpa}
-            </h1>
-          </div>
-        );
-      })}
-      <div className="first-year">CGPA: {Cgpa}</div>
+    <div className="gpa-data-wrapper">
+      <div className="container gpa-data-table">
+        <h1 className="cgpa">CGPA : {Cgpa}</h1>
+        <div>
+          {Object.keys(gpaData).map(([key, value]) => {
+            return (
+              <div key={key} className="gpa">
+                <h3>
+                  Semester {key} GPA : {gpaData[key].gpa}
+                </h3>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 };

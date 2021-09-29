@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Navbar, Container } from "react-bootstrap";
 import "./App.css";
 import GpaCalculator from "./components/GpaCalculator";
 import SelectNoOfSemesters from "./components/SelectNoOfSemesters";
@@ -11,8 +11,14 @@ function App() {
   const [ShowGpaData, setShowGpaData] = useState(false);
 
   return (
-    <div className="container">
-      <h1 className="heading">GPA Calculator</h1>
+    <div>
+      <Navbar bg="white">
+        <Container>
+          <Navbar.Brand>
+            <h2>GPA Calculator</h2>
+          </Navbar.Brand>
+        </Container>
+      </Navbar>
       <div className="body">
         {noOfSemesters === 0 ? (
           <SelectNoOfSemesters
@@ -21,7 +27,7 @@ function App() {
           />
         ) : (
           <div>
-            <div>
+            <div className="go-back">
               <Button
                 variant="danger"
                 onClick={() => {
@@ -32,86 +38,106 @@ function App() {
                 Go Back
               </Button>
             </div>
-            <div className="row row-cols-12 row-cols-lg-3">
-              {noOfSemesters >= 1 ? (
-                <GpaCalculator
-                  key={1}
-                  semno={1}
-                  setGpaData={setGpaData}
-                  gpaData={gpaData}
-                  setShowGpaData={setShowGpaData}
-                />
-              ) : null}
+            <div className="container">
+              <div className="row row-cols-12 row-cols-lg-3">
+                {noOfSemesters >= 1 ? (
+                  <GpaCalculator
+                    key={1}
+                    semno={1}
+                    setGpaData={setGpaData}
+                    gpaData={gpaData}
+                    setShowGpaData={setShowGpaData}
+                  />
+                ) : null}
 
-              {noOfSemesters >= 2 ? (
-                <GpaCalculator
-                  key={2}
-                  semno={2}
-                  setGpaData={setGpaData}
-                  gpaData={gpaData}
-                  setShowGpaData={setShowGpaData}
-                />
-              ) : null}
+                {noOfSemesters >= 2 ? (
+                  <GpaCalculator
+                    key={2}
+                    semno={2}
+                    setGpaData={setGpaData}
+                    gpaData={gpaData}
+                    setShowGpaData={setShowGpaData}
+                  />
+                ) : null}
 
-              {noOfSemesters >= 3 ? (
-                <GpaCalculator
-                  key={3}
-                  semno={3}
-                  setGpaData={setGpaData}
-                  gpaData={gpaData}
-                  setShowGpaData={setShowGpaData}
-                />
-              ) : null}
+                {noOfSemesters >= 3 ? (
+                  <GpaCalculator
+                    key={3}
+                    semno={3}
+                    setGpaData={setGpaData}
+                    gpaData={gpaData}
+                    setShowGpaData={setShowGpaData}
+                  />
+                ) : null}
 
-              {noOfSemesters >= 4 ? (
-                <GpaCalculator
-                  key={4}
-                  semno={4}
-                  setGpaData={setGpaData}
-                  gpaData={gpaData}
-                  setShowGpaData={setShowGpaData}
-                />
-              ) : null}
+                {noOfSemesters >= 4 ? (
+                  <GpaCalculator
+                    key={4}
+                    semno={4}
+                    setGpaData={setGpaData}
+                    gpaData={gpaData}
+                    setShowGpaData={setShowGpaData}
+                  />
+                ) : null}
 
-              {noOfSemesters >= 5 ? (
-                <GpaCalculator
-                  key={5}
-                  semno={5}
-                  setGpaData={setGpaData}
-                  gpaData={gpaData}
-                  setShowGpaData={setShowGpaData}
-                />
-              ) : null}
+                {noOfSemesters >= 5 ? (
+                  <GpaCalculator
+                    key={5}
+                    semno={5}
+                    setGpaData={setGpaData}
+                    gpaData={gpaData}
+                    setShowGpaData={setShowGpaData}
+                  />
+                ) : null}
 
-              {noOfSemesters >= 6 ? (
-                <GpaCalculator
-                  key={6}
-                  semno={6}
-                  setGpaData={setGpaData}
-                  gpaData={gpaData}
-                  setShowGpaData={setShowGpaData}
-                />
-              ) : null}
+                {noOfSemesters >= 6 ? (
+                  <GpaCalculator
+                    key={6}
+                    semno={6}
+                    setGpaData={setGpaData}
+                    gpaData={gpaData}
+                    setShowGpaData={setShowGpaData}
+                  />
+                ) : null}
 
-              {noOfSemesters >= 7 ? (
-                <GpaCalculator
-                  key={7}
-                  semno={7}
-                  setGpaData={setGpaData}
-                  gpaData={gpaData}
-                  setShowGpaData={setShowGpaData}
-                />
-              ) : null}
+                {noOfSemesters >= 7 ? (
+                  <GpaCalculator
+                    key={7}
+                    semno={7}
+                    setGpaData={setGpaData}
+                    gpaData={gpaData}
+                    setShowGpaData={setShowGpaData}
+                  />
+                ) : null}
 
-              {noOfSemesters >= 8 ? (
-                <GpaCalculator
-                  key={8}
-                  semno={8}
-                  setGpaData={setGpaData}
-                  gpaData={gpaData}
-                  setShowGpaData={setShowGpaData}
-                />
-              ) : null}
+                {noOfSemesters >= 8 ? (
+                  <GpaCalculator
+                    key={8}
+                    semno={8}
+                    setGpaData={setGpaData}
+                    gpaData={gpaData}
+                    setShowGpaData={setShowGpaData}
+                  />
+                ) : null}
+                {noOfSemesters >= 9 ? (
+                  <GpaCalculator
+                    key={9}
+                    semno={9}
+                    setGpaData={setGpaData}
+                    gpaData={gpaData}
+                    setShowGpaData={setShowGpaData}
+                  />
+                ) : null}
+                {noOfSemesters >= 10 ? (
+                  <GpaCalculator
+                    key={10}
+                    semno={10}
+                    setGpaData={setGpaData}
+                    gpaData={gpaData}
+                    setShowGpaData={setShowGpaData}
+                  />
+                ) : null}
+              </div>
             </div>
           </div>
         )}
