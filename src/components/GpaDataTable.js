@@ -17,7 +17,7 @@ const GpaDataTable = ({ gpaData, noOfSemesters }) => {
       const total = numerator / denominator;
       setCgpa(total);
     }
-  }, [gpaData]);
+  }, [gpaData, noOfSemesters]);
 
   return (
     <div className="gpa-data-wrapper">
