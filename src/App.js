@@ -12,14 +12,17 @@ function App() {
 
   return (
     <div>
-      <Navbar bg="white">
+      <Navbar bg="none">
         <Container>
           <Navbar.Brand>
             <h2>GPA Calculator</h2>
           </Navbar.Brand>
+          <Navbar>
+            <h3>Made by Izhan</h3>
+          </Navbar>
         </Container>
       </Navbar>
-      <div className="body">
+      <body>
         {noOfSemesters === 0 ? (
           <SelectNoOfSemesters
             setNoOfSemesters={setNoOfSemesters}
@@ -159,7 +162,7 @@ function App() {
         ) : (
           <div></div>
         )}
-      </div>
+      </body>
     </div>
   );
 }
