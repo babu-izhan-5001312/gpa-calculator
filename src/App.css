@@ -18,6 +18,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .gpa-calculator-wrapper {
@@ -30,9 +31,14 @@ body {
 
 .gpa-calculator {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-top: 70px;
   padding-top: 60px;
+  max-width: 400px;
+}
+
+.gpa-container {
+  margin-bottom: 3rem;
 }
 
 .calc-wrapper {
@@ -54,7 +60,7 @@ body {
 }
 
 .calculate-button {
-  margin-bottom: 10rem;
+  margin-bottom: 4rem;
 }
 
 .subject-button {
@@ -103,7 +109,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 40px;
+  margin: 20px;
 }
 
 .description {
@@ -115,6 +121,7 @@ body {
 
 .table-heading {
   text-align: center;
+  min-width: 110px;
 }
 
 .table-heading-wrapper {

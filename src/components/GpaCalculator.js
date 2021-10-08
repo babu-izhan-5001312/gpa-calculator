@@ -47,11 +47,11 @@ function GpaCalculator({ semno, setGpaData, gpaData, setShowGpaData }) {
   return (
     <div className=" gpa-calculator-wrapper">
       <div className="gpa-calculator">
-        <div className="sem">Semester: {semno}</div>
+        <div className="sem">Semester {semno}</div>
         <div className="number-of-subjects">
           <div className="no-of-subjects">No.of Subjects:{subjects.length}</div>
           <Button
-            variant="primary"
+            variant="dark"
             onClick={() => {
               setSubjects([...subjects, subjects[-1] + 1]);
             }}
@@ -60,7 +60,7 @@ function GpaCalculator({ semno, setGpaData, gpaData, setShowGpaData }) {
             +
           </Button>
           <Button
-            variant="danger"
+            variant="dark"
             onClick={() => {
               let arr = [...subjects];
               arr.pop();
@@ -74,7 +74,8 @@ function GpaCalculator({ semno, setGpaData, gpaData, setShowGpaData }) {
 
         <div className="subjects-input row-cols-12 row">
           <div className="table-heading-wrapper">
-            <div className="table-heading">Grade Points | Credits</div>
+            <div className="table-heading">Grade Points </div>
+            <div className="table-heading">Credits</div>
           </div>
           <form onSubmit={handleSubmit}>
             <div className="d-flex align-items-center justify-content-center flex-column points-credits-inputs">
@@ -113,7 +114,7 @@ function GpaCalculator({ semno, setGpaData, gpaData, setShowGpaData }) {
               })}
             </div>
             <div className="d-flex align-items-center justify-content-center calculate-button-wrapper">
-              <Button className="calculate-button" type="submit">
+              <Button className="calculate-button" type="submit" variant="dark">
                 Calculate
               </Button>
             </div>

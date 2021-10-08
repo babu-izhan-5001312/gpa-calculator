@@ -11,7 +11,7 @@ function App() {
   const [ShowGpaData, setShowGpaData] = useState(false);
 
   return (
-    <div>
+    <div className="container gpa-container">
       <Navbar bg="none">
         <Container>
           <Navbar.Brand>
