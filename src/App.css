@@ -96,8 +96,8 @@ body {
   justify-content: center;
 }
 
-.year {
-  margin-left: 20px;
+.year-button.year-button-wrapper {
+  padding: 0px;
 }
 
 .sem-header {

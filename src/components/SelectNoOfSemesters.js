@@ -6,19 +6,21 @@ const SelectNoOfSemesters = ({ setNoOfSemesters }) => {
     <div className="semester container row d-flex align-items-center justify-content-center ">
       <div className="col-12 col-md-6">
         <h1 className="description">
-          GPA Claculator calculates your GPA uptill your 5th year of
-          University.(Made for GPAs that are out of 10).
+          GPA Claculator, calculates your GPA for each semester as well as CGPA
+          for all the semesters combined.
+          <br />
+          <br /> (Made for GPAs that are out of 10).
         </h1>
       </div>
       <div className="selectsem col-12 col-md-6 d-flex align-items-center justify-content-center flex-column ">
         <h1 className="sem-header">Select No. of Semesters</h1>
-        <div className="year-wrapper">
-          <div className="year row">
+        <div className="year-wrapper container">
+          <div className="row">
             {semesters.map((sem) => {
               return (
                 <Button
                   variant="dark"
-                  className="semester-button col-12 col-md-5"
+                  className="semester-button col"
                   onClick={() => setNoOfSemesters(sem)}
                 >
                   {sem} Semester
