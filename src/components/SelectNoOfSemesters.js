@@ -6,8 +6,8 @@ const SelectNoOfSemesters = ({ setNoOfSemesters }) => {
     <div className="semester container row d-flex align-items-center justify-content-center ">
       <div className="col-12 col-md-6">
         <h1 className="description">
-          GPA Claculator is a calculator that calculates your GPA for either 1
-          semester or 1, 2, 3 , 4 or 5 years.
+          GPA Claculator calculates your GPA uptill your 5th year of
+          University.(Made for GPAs that are out of 10).
         </h1>
       </div>
       <div className="selectsem col-12 col-md-6 d-flex align-items-center justify-content-center flex-column ">
@@ -21,7 +21,7 @@ const SelectNoOfSemesters = ({ setNoOfSemesters }) => {
                   className="semester-button col-12 col-md-5"
                   onClick={() => setNoOfSemesters(sem)}
                 >
-                  Only {sem} Semester
+                  {sem} Semester
                 </Button>
               );
             })}
