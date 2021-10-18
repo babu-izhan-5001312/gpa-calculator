@@ -30,8 +30,10 @@ body {
 }
 
 .gpa-calculator {
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-radius: 10px;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  border-radius: 20px;
   margin-top: 70px;
   padding-top: 60px;
   max-width: 400px;
@@ -57,6 +59,9 @@ body {
 .one-subject {
   width: 90%;
   margin-top: 10px;
+  padding-bottom: 10px;
+  align-items: center;
+  padding-right: 10px;
 }
 
 .calculate-button {
@@ -81,6 +86,16 @@ body {
   margin-top: 70px;
 }
 
+.selectsem {
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  margin-top: 70px;
+  padding: 60px;
+  max-width: 400px;
+  border-radius: 20px;
+}
+
 @media (max-width: 768px) {
   .selectsem {
     margin-top: 100px !important;
@@ -88,12 +103,6 @@ body {
   .semester {
     margin-top: 70px !important;
   }
-}
-
-.year-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .year-button.year-button-wrapper {
@@ -131,6 +140,11 @@ body {
 }
 
 .gpa-data-wrapper {
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  padding: 30px;
+  border-radius: 20px;
   margin: 100px;
 }
 
@@ -144,4 +158,8 @@ body {
 
 .gpa {
   padding: 20px;
+}
+
+.credits {
+  padding-right: 20px;
 }

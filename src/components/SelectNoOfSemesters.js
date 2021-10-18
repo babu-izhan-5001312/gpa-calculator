@@ -12,7 +12,7 @@ const SelectNoOfSemesters = ({ setNoOfSemesters }) => {
           <br /> (Made for GPAs that are out of 10).
         </h1>
       </div>
-      <div className="selectsem col-12 col-md-6 d-flex align-items-center justify-content-center flex-column ">
+      <div className="selectsem col-12 col-md-6 ">
         <h1 className="sem-header">Select No. of Semesters</h1>
         <div className="year-wrapper container">
           <div className="row">
