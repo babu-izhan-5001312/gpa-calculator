@@ -68,14 +68,18 @@ body {
   margin-bottom: 4rem;
 }
 
-.subject-button {
+.subject-button.sub-btn {
   margin: 0.5rem;
+  padding: 0px 10px 0px 10px;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .semester-button {
   margin: 0.5rem;
-  min-width: 160px;
+  max-width: 160px;
   min-height: 50px;
+  min-width: 100%;
 }
 
 .one-subject {
