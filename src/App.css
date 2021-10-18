@@ -95,8 +95,8 @@ body {
     rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
     rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
   margin-top: 70px;
-  padding: 60px;
-  max-width: 400px;
+  padding: 20px 30px 20px 30px;
+  max-width: 700px;
   border-radius: 20px;
 }
 
@@ -107,6 +107,10 @@ body {
   .semester {
     margin-top: 70px !important;
   }
+}
+
+.semester-btn.semester-button-wrapper {
+  padding-left: 0px;
 }
 
 .year-button.year-button-wrapper {

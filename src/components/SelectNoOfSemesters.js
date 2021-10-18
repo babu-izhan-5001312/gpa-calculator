@@ -18,7 +18,7 @@ const SelectNoOfSemesters = ({ setNoOfSemesters }) => {
           <div className="row">
             {semesters.map((sem) => {
               return (
-                <div className="col col-md-6 col-12">
+                <div className=" semester-btn semester-button-wrapper col col-md-6 col-12">
                   <Button
                     variant="dark"
                     className="semester-button"
