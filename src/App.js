@@ -11,14 +11,22 @@ function App() {
   const [ShowGpaData, setShowGpaData] = useState(false);
 
   return (
-    <div className="container gpa-container">
+    <div className="gpa-container">
       <Navbar bg="none">
         <Container>
           <Navbar.Brand>
             <h2>GPA Calculator</h2>
           </Navbar.Brand>
           <Navbar>
-            <h3>Made by Izhan</h3>
+            <a
+              className="link"
+              href="https://babumohammedizhan.netlify.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {" "}
+              Izhan
+            </a>
           </Navbar>
         </Container>
       </Navbar>
@@ -43,7 +51,11 @@ function App() {
             </div>
             <div className="container">
               <div className="row">
-                <div className="col-12 col-lg-6">
+                <div
+                  className={
+                    noOfSemesters === 1 ? `col-12` : `col-12  col-lg-6`
+                  }
+                >
                   {noOfSemesters >= 1 ? (
                     <GpaCalculator
                       key={1}

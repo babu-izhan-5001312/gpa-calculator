@@ -13,7 +13,7 @@ const SelectNoOfSemesters = ({ setNoOfSemesters }) => {
         </h1>
       </div>
       <div className="selectsem col-12 col-md-6 ">
-        <h1 className="sem-header">Select No. of Semesters</h1>
+        <h1 className="sem-header">No. of Semesters</h1>
         <div className="year-wrapper container">
           <div className="row">
             {semesters.map((sem) => {
