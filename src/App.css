@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;700&display=swap");
 
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -17,7 +17,7 @@ input[type="number"]::-webkit-outer-spin-button {
   text-decoration: none;
   font-size: 1.5rem;
   color: rgb(140, 0, 255);
-  margin-bottom: 1rem;
+  padding-bottom: 0.7rem;
 }
 
 body {
@@ -34,6 +34,7 @@ body {
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 .gpa-calculator {
@@ -47,7 +48,7 @@ body {
 }
 
 .gpa-container {
-  margin-bottom: 3rem;
+  width: 90vw;
 }
 
 .calc-wrapper {
@@ -93,7 +94,6 @@ body {
   width: 90%;
 }
 
-
 .selectsem {
   box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
     rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
@@ -102,15 +102,6 @@ body {
   padding: 20px 30px 20px 30px;
   max-width: 700px;
   border-radius: 20px;
-}
-
-@media (max-width: 768px) {
-  .selectsem {
-    margin-top: 100px !important;
-  }
-  .semester {
-    margin-top: 70px !important;
-  }
 }
 
 .semester-btn.semester-button-wrapper {
@@ -123,7 +114,7 @@ body {
 
 .sem-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin: 20px 0px;
 }
 
 .go-back {
@@ -174,4 +165,22 @@ body {
 
 .credits {
   padding-right: 20px;
+}
+
+@media (max-width: 768px) {
+  .selectsem {
+    margin-top: 100px !important;
+    margin-bottom: 2rem;
+  }
+  .semester {
+    margin-top: 70px !important;
+    padding: 0px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .description {
+    margin: 0px;
+    margin-right: 30px;
+  }
 }

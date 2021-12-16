@@ -12,11 +12,12 @@ function App() {
 
   return (
     <div className="gpa-container">
-      <Navbar bg="none">
+      <Navbar
+        bg="none"
+        className="row d-flex align-items-center justify-content-center"
+      >
         <Container>
-          <Navbar.Brand>
-            <h2>GPA Calculator</h2>
-          </Navbar.Brand>
+          <h2>GPA Calculator</h2>
           <Navbar>
             <a
               className="link"
