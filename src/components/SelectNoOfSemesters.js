@@ -1,9 +1,9 @@
-import { Button } from "react-bootstrap";
+import { Button } from 'react-bootstrap';
 
 const SelectNoOfSemesters = ({ setNoOfSemesters }) => {
   const semesters = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   return (
-    <div className="semester container row d-flex align-items-center justify-content-center ">
+    <div className="semester row d-flex align-items-center justify-content-center ">
       <div className="col-12 col-md-6">
         <h1 className="description">
           GPA Claculator, calculates your GPA for each semester as well as CGPA
@@ -18,7 +18,7 @@ const SelectNoOfSemesters = ({ setNoOfSemesters }) => {
           <div className="row">
             {semesters.map((sem) => {
               return (
-                <div className=" semester-btn semester-button-wrapper col col-md-6 col-12">
+                <div className=" semester-btn semester-button-wrapper col-md-6 col-sm-12">
                   <Button
                     variant="dark"
                     className="semester-button"

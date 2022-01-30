@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { Button, Navbar, Container } from "react-bootstrap";
-import "./App.css";
-import GpaCalculator from "./components/GpaCalculator";
-import SelectNoOfSemesters from "./components/SelectNoOfSemesters";
-import GpaDataTable from "./components/GpaDataTable";
+import { useState } from 'react';
+import { Button, Navbar, Container } from 'react-bootstrap';
+import './App.css';
+import GpaCalculator from './components/GpaCalculator';
+import SelectNoOfSemesters from './components/SelectNoOfSemesters';
+import GpaDataTable from './components/GpaDataTable';
 
 function App() {
   const [noOfSemesters, setNoOfSemesters] = useState(0);
@@ -25,9 +25,25 @@ function App() {
               target="_blank"
               rel="noreferrer"
             >
-              {" "}
+              {' '}
               Izhan
             </a>
+            {noOfSemesters > 0 ? (
+              <div className="go-back">
+                <Button
+                  variant="danger"
+                  size="sm"
+                  onClick={() => {
+                    setNoOfSemesters(0);
+                    setShowGpaData(false);
+                  }}
+                >
+                  Go Back
+                </Button>
+              </div>
+            ) : (
+              ''
+            )}
           </Navbar>
         </Container>
       </Navbar>
@@ -39,17 +55,6 @@ function App() {
           />
         ) : (
           <div>
-            <div className="go-back">
-              <Button
-                variant="danger"
-                onClick={() => {
-                  setNoOfSemesters(0);
-                  setShowGpaData(false);
-                }}
-              >
-                Go Back
-              </Button>
-            </div>
             <div className="container">
               <div className="row">
                 <div

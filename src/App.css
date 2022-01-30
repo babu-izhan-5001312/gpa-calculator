@@ -1,14 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;700&display=swap');
 
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -43,7 +43,7 @@ body {
     rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
   border-radius: 20px;
   margin-top: 70px;
-  padding-top: 60px;
+  padding-top: 40px;
   max-width: 400px;
 }
 
@@ -100,8 +100,22 @@ body {
     rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
   margin-top: 70px;
   padding: 20px 30px 20px 30px;
-  max-width: 700px;
+  max-width: 400px !important;
   border-radius: 20px;
+}
+
+.sem {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.no-of-subjects {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.subjects-input {
+  margin-top: 2rem !important;
 }
 
 .semester-btn.semester-button-wrapper {
@@ -118,10 +132,8 @@ body {
 }
 
 .go-back {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px;
+  margin-left: 30px;
+  padding-bottom: 13px;
 }
 
 .description {
@@ -129,6 +141,10 @@ body {
 }
 .calculate-button-wrapper {
   margin-top: 50px;
+}
+
+.number {
+  padding-left: 4rem !important;
 }
 
 .table-heading {
@@ -140,6 +156,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding-bottom: 20px;
 }
 
 .gpa-data-wrapper {
