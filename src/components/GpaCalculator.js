@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, forwardRef, useImperativeHandle } from 'react';
 import { Button, FormControl } from 'react-bootstrap';
 
-function GpaCalculator({ semno, setGpaData, gpaData, setShowGpaData }) {
+function GpaCalculator({ semno, setGpaData, gpaData, setShowGpaData }, ref) {
   const [subjects, setSubjects] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
   const [credits, setCredits] = useState({});
   const [points, setPoints] = useState({});
@@ -40,9 +40,16 @@ function GpaCalculator({ semno, setGpaData, gpaData, setShowGpaData }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+  };
+
+  const handleFunction = () => {
     calculateGpa();
     setShowGpaData(true);
   };
+
+  useImperativeHandle(ref, () => ({
+    handleFunction,
+  }));
 
   return (
     <div className=" gpa-calculator-wrapper">
@@ -117,11 +124,6 @@ function GpaCalculator({ semno, setGpaData, gpaData, setShowGpaData }) {
                 );
               })}
             </div>
-            <div className="d-flex align-items-center justify-content-center calculate-button-wrapper">
-              <Button className="calculate-button" type="submit" variant="dark">
-                Calculate
-              </Button>
-            </div>
           </form>
         </div>
       </div>
@@ -129,4 +131,4 @@ function GpaCalculator({ semno, setGpaData, gpaData, setShowGpaData }) {
   );
 }
 
-export default GpaCalculator;
+export default forwardRef(GpaCalculator);
