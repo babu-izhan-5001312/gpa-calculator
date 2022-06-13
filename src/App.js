@@ -67,7 +67,7 @@ function App() {
           <div>
             <div className="container">
               <div className="row">
-                {noOfSemesters.map((sem) => {
+                {noOfSemesters.map((sem, index) => {
                   return (
                     <div
                       className={
@@ -77,6 +77,7 @@ function App() {
                       }
                     >
                       <GpaCalculator
+                        ref={(el) => (itemsRef.current[index] = el)}
                         key={sem}
                         semno={sem}
                         setGpaData={setGpaData}
