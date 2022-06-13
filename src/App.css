@@ -45,6 +45,7 @@ body {
   margin-top: 70px;
   padding-top: 40px;
   max-width: 400px;
+  padding-bottom: 3rem;
 }
 
 .gpa-container {
@@ -74,6 +75,7 @@ body {
 
 .calculate-button {
   margin-bottom: 4rem;
+  width: 90%;
 }
 
 .subject-button.sub-btn {

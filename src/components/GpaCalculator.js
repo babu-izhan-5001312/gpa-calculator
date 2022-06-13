@@ -84,7 +84,7 @@ function GpaCalculator({ semno, setGpaData, gpaData, setShowGpaData }, ref) {
             <div className="table-heading">Grade Points </div>
             <div className="table-heading credits">Credits</div>
           </div>
-          <form onSubmit={handleSubmit}>
+          <form>
             <div className="d-flex align-items-center justify-content-center flex-column points-credits-inputs">
               {subjects.map((n, i) => {
                 return (

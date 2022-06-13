@@ -31,7 +31,7 @@ function App() {
           <Navbar>
             <a
               className="link"
-              href="https://babumohammedizhan.netlify.app/"
+              href="https://izhan.codes/"
               target="_blank"
               rel="noreferrer"
             >
