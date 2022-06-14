@@ -8,8 +8,8 @@ function GpaCalculator({ semno, setGpaData, gpaData, setShowGpaData }, ref) {
 
   const calculateGpa = () => {
     let tempArray = [];
-    subjects.forEach((subno, i) => {
-      tempArray.push(credits[i + 1] * points[i + 1]);
+    Object.keys(points).forEach((i) => {
+      tempArray.push(credits[i] * points[i]);
     });
     const numerator = tempArray.reduce((a, b) => a + b);
     const denominator = Object.values(credits).reduce(
