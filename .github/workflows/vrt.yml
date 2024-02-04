@@ -16,17 +16,13 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-    
-      # - name: Build app
-      #   run: npm run build
-      #   env:
-      #     CI: ""
 
-      - name: Start server (in background)
-        run: npm run start &
-
-      - name: Run Cypress Tests (in background)
-        run: npm run cypress:run &
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          build: npm run build
+          start: npm start
+          browser: chrome
 
       - name: Lost Pixel
         uses: lost-pixel/lost-pixel@v3.4.0
