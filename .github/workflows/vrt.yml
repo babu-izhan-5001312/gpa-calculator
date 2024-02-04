@@ -23,7 +23,7 @@ jobs:
       #     CI: ""
 
       - name: Start server (in background)
-        run: npm run start
+        run: npm run start &
 
       - name: Run Cypress Tests (in background)
         run: npm run cypress:run &
