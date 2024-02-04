@@ -17,10 +17,10 @@ jobs:
       - name: Install dependencies
         run: npm install
     
-      - name: Build app
-        run: npm run build
-        env:
-          CI: ""
+      # - name: Build app
+      #   run: npm run build
+      #   env:
+      #     CI: ""
 
       - name: Start server (in background)
         run: npm run start
