@@ -7,7 +7,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       on('after:screenshot', (details) => {
 
-        const newPath = './cypress/screenshots/screenshot.png'
+        const newPath = `./cypress/screenshots/${details.name}.png`
 
         return new Promise((resolve, reject) => {
           // fs.rename moves the file to the existing directory 'new/path/to'
