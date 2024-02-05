@@ -1,4 +1,10 @@
-on: [push, pull_request]
+name: E2E Visual Regression Test
+
+on: 
+  pull_request:
+  push:
+    branches:
+      - master
 
 jobs:
   build:
