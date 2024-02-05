@@ -22,7 +22,6 @@ const SelectNoOfSemesters = ({ setNoOfSemesters }) => {
                   <Button
                     variant="dark"
                     className="semester-button"
-                    style={{'padding': '30px'}}
                     onClick={() => setNoOfSemesters(semesters.splice(0, sem))}
                   >
                     {sem} Semester
