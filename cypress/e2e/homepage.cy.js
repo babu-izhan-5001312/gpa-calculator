@@ -2,6 +2,6 @@ describe('template spec', () => {
   it('passes', () => {
     cy.visit('/')
 
-    cy.screenshot('homepage');
+    cy.screenshot('testing123');
   })
 })
