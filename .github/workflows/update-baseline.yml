@@ -23,7 +23,7 @@ jobs:
           browser: chrome
 
       - name: Give permission
-        run: sudo chown -R $USER:$USER .
+        run: sudo chmod -R g+w 
 
       - name: Lost Pixel
         uses: lost-pixel/lost-pixel@v3.8.0
