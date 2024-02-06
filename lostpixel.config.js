@@ -2,6 +2,9 @@ export const config = {
  customShots: {
     currentShotsPath: "./cypress/screenshots",
   },
+  imagePathBaseline: "./baseline-images",
+  imagePathCurrent: "./current-images",
+  imagePathDifference: "./difference-images",
   // OSS mode 
   generateOnly: true,
   failOnDifference: true
