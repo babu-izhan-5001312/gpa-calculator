@@ -1,6 +1,6 @@
 export const config = {
  customShots: {
-    currentShotsPath: "./lost-pixel",
+    currentShotsPath: "./cypress/screenshots",
   },
   imagePathBaseline: "./baseline-images",
   imagePathCurrent: "./current-images",
