@@ -1,6 +1,7 @@
 on: 
   push:
-    [master]
+    branches:
+      - master
 
 jobs:
   lost-pixel-update:
