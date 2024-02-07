@@ -33,7 +33,7 @@ jobs:
         env:
           LOST_PIXEL_MODE: update
       - name: Create Git commit
-        - uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v5
         if: ${{ failure() && steps.lp.conclusion == 'failure' }}
         with:
           commit_message: update lost-pixel baselines
