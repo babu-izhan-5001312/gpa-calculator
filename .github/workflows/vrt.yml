@@ -34,6 +34,7 @@ jobs:
       
       - name: Lost Pixel Get Images
         uses: actions/upload-artifact@v3
+        if: ${{ failure() && steps.lp.conclusion == 'failure' }}
         with:
           name: lost-pixel-artefacts
           path: .lostpixel
