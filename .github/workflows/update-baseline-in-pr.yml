@@ -1,0 +1,39 @@
+name: Update Baseline Changes in PR
+
+on: 
+  pull_request:
+    types: [labeled]
+
+jobs:
+  lost-pixel-update:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.label.name == 'Approved Visual Changes' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18.x
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          start: npm start
+          browser: chrome
+
+      - name: Lost Pixel
+        id: lp
+        uses: lost-pixel/lost-pixel@v3.8.0
+        env:
+          LOST_PIXEL_MODE: update
+      - name: Create Git commit
+        - uses: stefanzweifel/git-auto-commit-action@v5
+        if: ${{ failure() && steps.lp.conclusion == 'failure' }}
+        with:
+          commit_message: update lost-pixel baselines
