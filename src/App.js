@@ -36,7 +36,7 @@ function App() {
               rel="noreferrer"
             >
               {' '}
-              Izhan
+              Mohammed Izhan
             </a>
             {noOfSemesters.length > 0 ? (
               <div className="go-back">
