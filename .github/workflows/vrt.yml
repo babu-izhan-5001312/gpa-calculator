@@ -30,6 +30,7 @@ jobs:
           browser: chrome
 
       - name: Lost Pixel
+        id: lp        
         uses: lost-pixel/lost-pixel@v3.4.0
 
       - name: Lost Pixel Get Images
