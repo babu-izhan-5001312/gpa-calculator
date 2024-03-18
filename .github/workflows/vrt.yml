@@ -38,4 +38,4 @@ jobs:
         if: ${{ failure() && steps.lp.conclusion == 'failure' }}
         with:
           name: lost-pixel-artefacts
-          path: .lostpixel
+          path: .current-images
