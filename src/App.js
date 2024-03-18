@@ -27,7 +27,7 @@ function App() {
         className="row d-flex align-items-center justify-content-center"
       >
         <Container>
-          <h2>TESTING TITLE</h2>
+          <h2>GPA Calculator</h2>
           <Navbar>
             <a
               className="link"
@@ -36,7 +36,7 @@ function App() {
               rel="noreferrer"
             >
               {' '}
-              Izhan
+              Mohammed Izhan
             </a>
             {noOfSemesters.length > 0 ? (
               <div className="go-back">
