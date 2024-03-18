@@ -27,7 +27,7 @@ function App() {
         className="row d-flex align-items-center justify-content-center"
       >
         <Container>
-          <h2>GPA Calculator</h2>
+          <h2>GPA Calcul</h2>
           <Navbar>
             <a
               className="link"
